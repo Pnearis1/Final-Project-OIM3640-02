@@ -1,6 +1,49 @@
-# this page will display the Users account summary
-# This page will show their income 
-# this page will show their budgeting rules 
-# this page will show how much money they have left to spend/save 
-# this page will show their emergecy fund and retirment fund 
-# this page will show 
+# this page will serve as a window for users to see their monthly finance summary, including income, expenses, and allocations.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Finance Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<div class="container mt-5">
+    <h1 class="text-center mb-4">📊 Monthly Finance Summary</h1>
+
+    <div class="card mb-3">
+        <div class="card-header bg-primary text-white">Income</div>
+        <div class="card-body">
+            <p><strong>Total Monthly Income:</strong> ${{ monthly_income }}</p>
+            <p><strong>Monthly Expenses:</strong> ${{ monthly_expenses }}</p>
+            <p><strong>Remaining After Expenses:</strong> ${{ remaining_income }}</p>
+        </div>
+    </div>
+
+    <div class="card mb-3">
+        <div class="card-header bg-success text-white">Income Allocation</div>
+        <div class="card-body">
+            <p><strong>Retirement Fund:</strong> ${{ allocations.retirement }}</p>
+            <p><strong>Emergency Fund:</strong> ${{ allocations.emergency }}</p>
+            <p><strong>Liquidity (Cash):</strong> ${{ allocations.liquidity }}</p>
+        </div>
+    </div>
+
+    <div class="card mb-3">
+        <div class="card-header bg-warning text-dark">Spending Limit</div>
+        <div class="card-body">
+            <p><strong>Spending Limit:</strong> ${{ spending_limit }}</p>
+            <p><strong>Status:</strong>
+                {% if monthly_expenses > spending_limit %}
+                    <span class="text-danger">Over Limit</span>
+                {% elif monthly_expenses == spending_limit %}
+                    <span class="text-warning">At Limit</span>
+                {% else %}
+                    <span class="text-success">Within Limit</span>
+                {% endif %}
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
