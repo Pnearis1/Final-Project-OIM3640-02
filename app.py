@@ -34,7 +34,7 @@ expenses = [
     {"name": "Dining Out", "amount": 120, "category": "Lifestyle", "last_paid": "2025-04-25"},
 ]
 
-@app.route('/expenses')
+@app.route('/Expenses')
 def exp_index():
     categories = {
         "Housing + utilities": [],
