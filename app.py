@@ -31,7 +31,7 @@ expenses = [
     {"name": "Gas", "amount": 60, "category": "Lifestyle", "last_paid": "2025-04-26"},
     {"name": "Uber", "amount": 75, "category": "Lifestyle", "last_paid": "2025-04-26"},
     {"name": "Concert", "amount": 120, "category": "Lifestyle", "last_paid": "2025-04-26"},
-    {"name": "Dining Out", "amount": 120, "category": "lifestyle", "last_paid": "2025-04-25"},
+    {"name": "Dining Out", "amount": 120, "category": "Lifestyle", "last_paid": "2025-04-25"},
 ]
 
 @app.route('/expenses')
